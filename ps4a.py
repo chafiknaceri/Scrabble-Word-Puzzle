@@ -11,9 +11,7 @@ SCRABBLE_LETTER_VALUES = {
     'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
 
-# -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
+
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -50,12 +48,7 @@ def getFrequencyDict(sequence):
     return freq
 
 
-# (end of helper code)
-# -----------------------------------
 
-#
-# Problem #1: Scoring a word
-#
 def getWordScore(word, n):
     """
     Returns the score for a word. Assumes the word is a valid word.
@@ -71,7 +64,7 @@ def getWordScore(word, n):
     n: integer (HAND_SIZE; i.e., hand size required for additional points)
     returns: int >= 0
     """
-    # TO DO ... <-- Remove this comment when you code this function
+   
     score  =  0
     for char in word:
         score +=  SCRABBLE_LETTER_VALUES[char]
@@ -82,9 +75,7 @@ def getWordScore(word, n):
 
 
 
-#
-# Problem #2: Make sure you understand how this function works and what it does!
-#
+
 def displayHand(hand):
     """
     Displays the letters currently in the hand.
@@ -102,9 +93,6 @@ def displayHand(hand):
              print(letter,end=" ")       # print all on the same line
     print()                             # print an empty line
 
-#
-# Problem #2: Make sure you understand how this function works and what it does!
-#
 def dealHand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -130,9 +118,7 @@ def dealHand(n):
 
     return hand
 
-#
-# Problem #2: Update a hand by removing letters
-#
+
 def updateHand(hand, word):
     """
     Assumes that 'hand' has all the letters in word.
@@ -158,9 +144,7 @@ def updateHand(hand, word):
 
 
 
-#
-# Problem #3: Test word validity
-#
+
 def isValidWord(word, hand, wordList):
     """
     Returns True if word is in the wordList and is entirely
@@ -194,9 +178,6 @@ def isValidWord(word, hand, wordList):
 
 
 
-#
-# Problem #4: Playing a hand
-#
 
 def calculateHandlen(hand):
     """
@@ -284,24 +265,11 @@ def playHand(hand, wordList, n):
     else:
         print("Run out of letters. totalScore: {} points".format(totalScore))
 
-#
-# Problem #5: Playing a game
-#
+
 
 
 def playGame(wordList):
-    """
-    Allow the user to play an arbitrary number of hands.
 
-    1) Asks the user to input 'n' or 'r' or 'e'.
-      * If the user inputs 'n', let the user play a new (random) hand.
-      * If the user inputs 'r', let the user play the last hand again.
-      * If the user inputs 'e', exit the game.
-      * If the user inputs anything else, tell them their input was invalid.
-
-    2) When done playing the hand, repeat from step 1
-    """
-    # TO DO ... <-- Remove this comment when you code this function
     handsPlayed = []
     while True:
         ask = input("Enter n to deal a new hand, r to replay the last hand, or e to end game:")
@@ -323,9 +291,7 @@ def playGame(wordList):
 
 
 
-#
-# Build data structures used for entire session and play game
-#
+
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
