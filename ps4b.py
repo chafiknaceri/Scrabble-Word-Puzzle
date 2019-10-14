@@ -2,10 +2,7 @@ from ps4a import *
 import time
 
 
-#
-#
-# Computer chooses a word
-#
+
 #
 def compChooseWord(hand, wordList, n):
     """
@@ -23,9 +20,9 @@ def compChooseWord(hand, wordList, n):
 
     returns: string or None
     """
-    # Create a new variable to store the maximum score seen so far (initially 0)
+ 
     bestScore = 0
-    # Create a new variable to store the best word seen so far (initially None)
+    
     bestWord = None
     # For each word in the wordList
     for word in wordList:
@@ -41,9 +38,7 @@ def compChooseWord(hand, wordList, n):
     # return the best word you found.
     return bestWord
 
-#
-# Computer plays a hand
-#
+
 def compPlayHand(hand, wordList, n):
     """
     Allows the computer to play the given hand, following the same procedure
@@ -96,10 +91,7 @@ def compPlayHand(hand, wordList, n):
     print('Total score: ' + str(totalScore) + ' points.')
 
 
-#
-# Problem #6: Playing a game
-#
-#
+
 def playGame(wordList):
     """
     Allow the user to play an arbitrary number of hands.
@@ -124,7 +116,7 @@ def playGame(wordList):
 
     wordList: list (string)
     """
-    # TO DO... <-- Remove this comment when you code this function
+
     handsPlayed = []
 
     while True:
@@ -164,9 +156,7 @@ def playGame(wordList):
 
 
 
-#
-# Build data structures used for entire session and play game
-#
+
 if __name__ == '__main__':
     wordList = loadWords()
     playGame(wordList)
